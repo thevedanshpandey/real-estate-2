@@ -1,3 +1,4 @@
+
 export interface Project {
   id: string;
   name: string;
@@ -29,4 +30,12 @@ export interface Office {
   phone: string;
   image: string;
   coordinates?: { lat: number; lng: number };
+}
+
+export interface MediaMention {
+  id: string;
+  title: string;
+  source: string;
+  date: string;
+  link: string;
 }

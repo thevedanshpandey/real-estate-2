@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
@@ -10,6 +11,7 @@ import Footer from './components/Footer';
 import { PROJECTS, OFFICES } from './constants';
 import { ProjectCard } from './components/sections/ProjectCard';
 import { LuxuryButton } from './components/ui/LuxuryButton';
+import { MediaSection } from './components/sections/MediaSection';
 import { ExternalLink } from 'lucide-react';
 
 const App: React.FC = () => {
@@ -25,7 +27,7 @@ const App: React.FC = () => {
           {/* Section 2: Global Footprint */}
           <GlobalFootprint />
           
-          {/* Section 3: Regional Associates (Side-by-Side) */}
+          {/* Section 3: Regional Associates */}
           <section className="flex flex-col lg:flex-row min-h-[80vh] border-y border-white/5">
             {OFFICES.map((office, idx) => (
               <motion.div 
@@ -44,7 +46,7 @@ const App: React.FC = () => {
                   />
                 </div>
                 <div className="relative z-10 p-12 lg:p-24 flex flex-col justify-end h-full min-h-[600px] bg-gradient-to-t from-matte-black via-matte-black/40 to-transparent">
-                  <span className="text-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-4">Associate Firm</span>
+                  <span className="text-gold uppercase tracking-[0.4em] text-[10px] font-bold mb-4">Associate Office</span>
                   <h3 className="text-4xl lg:text-6xl font-serif text-white mb-8 leading-tight">{office.region}</h3>
                   
                   <div className="space-y-4 mb-12">
@@ -56,7 +58,7 @@ const App: React.FC = () => {
                   </div>
 
                   <LuxuryButton variant="ghost" className="self-start !px-0 border-b border-gold/30 rounded-none hover:border-gold">
-                    View Regional Projects <ExternalLink className="ml-4" size={14} />
+                    Regional Portfolio <ExternalLink className="ml-4" size={14} />
                   </LuxuryButton>
                 </div>
               </motion.div>
@@ -68,11 +70,11 @@ const App: React.FC = () => {
             <div className="max-w-7xl mx-auto">
               <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-24 gap-12">
                 <div className="space-y-6">
-                  <span className="text-gold uppercase tracking-[0.5em] text-[10px] font-bold">Strategic Portfolio</span>
-                  <h2 className="text-5xl lg:text-8xl font-serif text-white leading-none tracking-tighter">Signature <br /> <span className="italic">Landmarks</span></h2>
+                  <span className="text-gold uppercase tracking-[0.5em] text-[10px] font-bold">International Portfolio</span>
+                  <h2 className="text-5xl lg:text-8xl font-serif text-white leading-none tracking-tighter">Iconic <br /> <span className="italic text-gold">Milestones.</span></h2>
                 </div>
                 <p className="text-white/40 max-w-md font-light text-lg leading-relaxed border-l border-gold/20 pl-8">
-                  A selection of multi-billion dollar developments that define the global institutional capability of Al Faren & Partners.
+                  From major transport hubs to the world's most exclusive private residences, explore our legacy of architectural dominance.
                 </p>
               </div>
 
@@ -84,7 +86,7 @@ const App: React.FC = () => {
               
               <div className="mt-32 flex justify-center">
                  <LuxuryButton variant="outline" className="px-16">
-                   View Global Case Studies
+                   View Full Global Portfolio
                  </LuxuryButton>
               </div>
             </div>
@@ -93,13 +95,16 @@ const App: React.FC = () => {
           {/* Section 5: Services */}
           <Services />
           
-          {/* Section 6: Leadership */}
+          {/* Section 6: Media Credibility */}
+          <MediaSection />
+          
+          {/* Section 7: Leadership */}
           <Leadership />
           
-          {/* Section 7: Contact */}
+          {/* Section 8: Contact */}
           <Contact />
           
-          {/* Section 8: Footer */}
+          {/* Section 9: Footer */}
           <Footer />
         </main>
       </AnimatePresence>
